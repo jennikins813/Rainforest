@@ -1,4 +1,7 @@
 Rainforest::Application.routes.draw do
+  get "welcome/index"
+  root 'welcome#index'
+  
   resources :products
   resources :users, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
