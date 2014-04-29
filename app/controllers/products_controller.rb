@@ -9,6 +9,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @products = Product.where("name ILIKE ?", "%#{params[:search]}%")
+    render @products
+  end
+
   def show
   	@product = Product.find(params[:id])
 
