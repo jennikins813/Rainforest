@@ -21,7 +21,7 @@ $(document).ready(function() {
 		var searchValue = $('#search').val();
 
 		$.ajax({
-			url: '/products/search?search=' + searchValue,
+			url: '/products?search=' + searchValue,
 			type: 'GET',
 			dataType: 'html'
 		}).done(function(data){

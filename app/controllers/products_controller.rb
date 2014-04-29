@@ -7,11 +7,10 @@ class ProductsController < ApplicationController
     else
       Product.all
     end
-  end
 
-  def search
-    @products = Product.where("name ILIKE ?", "%#{params[:search]}%")
-    render @products
+    if request.xhr?
+      return render @products
+    end
   end
 
   def show
