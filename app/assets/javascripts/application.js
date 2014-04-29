@@ -28,5 +28,11 @@ $(document).ready(function() {
 			console.log(data);
 			$('#products').html(data);
 		});
+
+		$.get('/products?search=' + searchValue)
+			.done(function(data) {
+				console.log(data);
+				$('#products').html(data);
+			});
 	});
 });
