@@ -37,6 +37,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
 
+gem 'kaminari'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

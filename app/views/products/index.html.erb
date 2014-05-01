@@ -3,6 +3,12 @@
 	<%= submit_tag "Search" %>
 <% end %>	
 
+<%= page_entries_info @products %>
+<!-- appears before your list of products and tells you the number of products (out of total products) displayed on each page -->
+
 <div id="products">
 	<%= render @products %>
 </div>
+
+<%= paginate @products %>
+<!-- creates links on the products index page to go to next page (kaminari view helpers) -->
