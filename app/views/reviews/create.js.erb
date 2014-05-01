@@ -1,0 +1,7 @@
+<% if @review.errors.any? %>
+	$('#review-form-errors').html("<%= j(render partial: 'errors') %>");
+<% else %>
+	$('#review-form-errors').html("");
+	$('#reviews-list').append("<%= j(render partial: 'review', locals: {review: @review}) %>");
+	$('#review_comment').val("");
+<% end %>
