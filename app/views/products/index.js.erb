@@ -1,1 +1,7 @@
-$('#products').html("<%= escape_javascript(render @products) %>");
+$('#products').append("<%= escape_javascript(render @products) %>");
+/* 'escape_javascript' can also be 'j', as below:
+$('#products').html("<%= j(render @products) %>");
+*/
+
+$('#products-pagination').html("<%= j(paginate @products) %>");
+$('#products-count').html("<%= j(page_entries_info @products) %>");

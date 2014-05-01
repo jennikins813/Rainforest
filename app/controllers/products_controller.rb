@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      #format.json { render json: @products }
+      #line 16 allows controller action to respond to json
     end
   end
 
