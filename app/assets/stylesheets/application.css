@@ -11,3 +11,101 @@
  *= require_self
  *= require_tree .
  */
+body{
+	margin: 0px;
+	margin-left: 20px;
+	padding: 0px;
+	background-color: #FFE4C4;
+	/*#ADB96E;*/
+	color: #202628;
+	font-family: kaushan-script, century gothic;
+}
+
+.nav h1 {
+	font-family: kaushan-script, century gothic;
+	font-size: 3.0rem;
+}
+
+
+h1 {
+	font-family: kaushan-script, century gothic;
+}
+
+#error_explanation {
+	width: 450px;
+	border: 2px solid red;
+	padding: 7px;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	background-color: #cc0000;
+	color: white;
+}
+
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 1.2rem;
+	margin: -7px;
+	margin-bottom: 0px;
+	background-color: #cc0000;
+	color: white;
+}
+
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+
+.navdiv{
+	width: 150px;
+	height: 800px;
+	max-height: 100%;
+	top: 0;
+	background-color: #202628;
+	color: #ADB96E;
+	font-family: kaushan-script, century gothic;
+	padding: 0px 10px 10px 10px;
+	position: absolute;
+}
+
+.navdiv a{
+	text-decoration: none;
+	color: #ADB96E;
+}
+
+.main{
+	margin-left: 20%;
+	margin-top: 30px;
+	max-width: 60%;
+	max-height: 90%;
+	padding: 10px;
+	text-align: center;
+	font-family: century gothic;
+	background-color: rgba(204, 196, 159, 0.5);
+}
+
+.main a{
+	color: #202628;
+
+}
+
+#mbox{
+	text-align: center;
+	background-color: rgba(204, 196, 159, 0);
+}
+
+#notice{
+	font-size: 1.2rem;
+	margin-top: 20px;
+	font-family: century gothic;
+}
+
+.field label{
+	font-family: century gothic;
+	font-size: 1.3rem;
+}
+
+#review-list{
+	max-height: 220px;
+	overflow: scroll;
