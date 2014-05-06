@@ -3,5 +3,6 @@
 <% else %>
 	$('#review-form-errors').html("");
 	$('#reviews-list').append("<%= j(render partial: 'review', locals: {review: @review}) %>");
-	$('#review_comment').val("");
+	$('#product-reviews').append("<%= j(render @review) %>");
+	$('#review_comment').val('');
 <% end %>

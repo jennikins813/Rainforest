@@ -18,7 +18,13 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
     	if @review.save
-    		format.html {redirect_to products_path(@product.id), notice: "Review created successfully!"}
+        format.html do
+          if request.xhr?
+            return render @review
+          else
+      		  redirect_to products_path(@product.id), notice: "Review created successfully!"
+          end
+        end
         format.js {}
     	else
     		#format.html {render 'show'}

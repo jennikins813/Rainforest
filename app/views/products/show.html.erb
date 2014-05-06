@@ -20,7 +20,7 @@
 	<h3>Reviews</h3>
 	<p>Reviews for <%= @product.name %></p>
 
-	<div id="reviews-list">
+	<div id="product-reviews">
 		<% @product.reviews.each do |review| %>
 			<% if review.id.present? %>
 			<%= render partial: 'reviews/review', locals: {review: review} %>
