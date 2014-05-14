@@ -6,9 +6,12 @@
 	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	  <%= csrf_meta_tags %>
 	</head>
-	<body>	
+	<body>
+	<b><%= link_to "Log in", new_session_path %></b> | 
+	<b><%= link_to "Sign up", new_user_path %></b>	
 		<div class="nav">
 		<h1><%= link_to 'Rainforest', products_url %></h1>
+
 			<% if flash[:notice] %>
 				<p id="notice"><%= flash[:notice] %></p>
 			<% end %>	
