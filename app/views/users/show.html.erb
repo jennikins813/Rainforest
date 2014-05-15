@@ -1,0 +1,15 @@
+<h1>User's Page</h1>
+
+<p>
+	<b>Name:</b>
+	<%= @user.name %>
+</p>
+
+<p>
+	<b>Email:</b>
+	<%= @user.email %>
+</p>
+
+
+<b><%= link_to "Edit User", user_profile_path %></b> |
+<b><%= link_to "Back", products_path %></b>

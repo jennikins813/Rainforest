@@ -1,21 +1,20 @@
 Rainforest::Application.routes.draw do
   
-  get "profiles/index"
-  get "profiles/show"
-  get "profiles/new"
-  get "profiles/create"
-  get "profiles/edit"
-  get "profiles/update"
-  get "profiles/destroy"
   get "welcome/index"
   root 'welcome#index'
   
   resources :products
-  resources :users, :only => [:new, :create]
+  resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :products do
     resources :reviews, :except => [:index]
   end
+
+  #resources :users do
+    resources :profile
+  #end
+
+  #get '/:id', to: 'profiles#show'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

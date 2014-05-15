@@ -24,11 +24,10 @@
 
 			<p class="userinfo">
 				<% if current_user %>
-					Signed in as <%= current_user.name %>.
+					Signed in as <b><%= current_user.name %></b> <br /> 
+					<%= link_to "Edit User", user_path %>| 
 					<%= link_to "Log out", session_path("current"), :method => :delete %>
-				<% else %>
-					<%= link_to "Log in", new_session_path %> or 
-					<%= link_to "Sign up", new_user_path %>
+				
 				<% end %>
 			</p>		
 
