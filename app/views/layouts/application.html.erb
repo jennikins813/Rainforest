@@ -2,8 +2,8 @@
 <html>
 	<head>
 	  <title>Rainforest</title>
-	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	  <%= stylesheet_link_tag    "application" => true %>
+	  <%= javascript_include_tag "application" => true %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -27,9 +27,7 @@
 			<p class="userinfo">
 				<% if current_user %>
 					Signed in as <b><%= current_user.name %></b> <br /> 
-					<b><%= link_to "Users Page", user_path %></b> |
-
-					<b><%= link_to "Edit Profile", edit_user_profile_path %></b> |
+					
 					
 					<%= link_to "Log out", session_path("current"), :method => :delete %>
 				

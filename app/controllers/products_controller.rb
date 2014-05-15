@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
       Product.all
     end
 
-    @products = @products.page(params[:page]).order("created_at DESC")    #this is for the pagination
+    @products = @products.page(params[:page]).order("created_at ASC")    #this is for the pagination
 
     respond_to do |format|
       format.html
