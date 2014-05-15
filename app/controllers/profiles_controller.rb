@@ -1,13 +1,13 @@
 class ProfilesController < ApplicationController
-  before_filter :ensure_logged_in, :only => [:edit, :create, :show, :update, :destroy]
+  before_filter :ensure_logged_in
   before_filter :get_user
 
   def index
   end
 
   def show
-    @user = User.find(params[:user_id])
-    if @user
+    @profile = Profile.find(params[:id])
+    if current_user
       render 'show'
     else
     end
@@ -37,10 +37,18 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.find(params[:id])
   end
 
-  def update
-  end
+  #def update
+  #  @profile = Profile.find(params[:id])
+
+  #  if @profile.update_attributes(profile_params)
+  #    redirect_to user_path(@user)
+  #  else
+  #    render 'edit'
+  #  end
+  #end
 
   def destroy
   end

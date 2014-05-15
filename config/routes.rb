@@ -10,9 +10,9 @@ Rainforest::Application.routes.draw do
     resources :reviews, :except => [:index]
   end
 
-  #resources :users do
-    resources :profile
-  #end
+  resources :users do
+    resources :profiles
+  end
 
   #get '/:id', to: 'profiles#show'
   

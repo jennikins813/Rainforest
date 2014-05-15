@@ -8,7 +8,9 @@
 	</head>
 	<body>
 	<b><%= link_to "Log in", new_session_path %></b> | 
-	<b><%= link_to "Sign up", new_user_path %></b>	
+	<b><%= link_to "Sign up", new_user_path %></b>	|
+
+	
 		<div class="nav">
 		<h1><%= link_to 'Rainforest', products_url %></h1>
 
@@ -25,7 +27,10 @@
 			<p class="userinfo">
 				<% if current_user %>
 					Signed in as <b><%= current_user.name %></b> <br /> 
-					<%= link_to "Edit User", user_path %>| 
+					<b><%= link_to "Users Page", user_path %></b> |
+
+					<b><%= link_to "Edit Profile", edit_user_profile_path %></b> |
+					
 					<%= link_to "Log out", session_path("current"), :method => :delete %>
 				
 				<% end %>

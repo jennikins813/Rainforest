@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	has_many :reviews
 	has_many :products, :through => :reviews
 	has_one :profile
-	#accepts_nested_attributes_for :user_profile
+	accepts_nested_attributes_for :profile
 
 	validates_presence_of :name
 
