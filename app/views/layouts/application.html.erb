@@ -2,8 +2,8 @@
 <html>
 	<head>
 	  <title>Rainforest</title>
-	  <%= stylesheet_link_tag    "application" => true %>
-	  <%= javascript_include_tag "application" => true %>
+	  <%= stylesheet_link_tag    "application", media: "all" %>
+	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -12,7 +12,7 @@
 
 	
 		<div class="nav">
-		<h1><%= link_to 'Rainforest', products_url %></h1>
+		<h1><%= link_to 'Rainforest', root_url %></h1>
 
 			<% if flash[:notice] %>
 				<p id="notice"><%= flash[:notice] %></p>
@@ -26,9 +26,10 @@
 
 			<p class="userinfo">
 				<% if current_user %>
-					Signed in as <b><%= current_user.name %></b> <br /> 
+					Signed in as <b><%= link_to current_user.name, user_path(current_user.id) %></b> <br /> 
 					
 					
+					<b><%= link_to "Edit User", edit_user_path(current_user.id) %></b> |
 					<%= link_to "Log out", session_path("current"), :method => :delete %>
 				
 				<% end %>

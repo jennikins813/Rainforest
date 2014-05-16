@@ -13,13 +13,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  #def show
-  #  @profile = Profile.find(params[:user_id])
-  #  if current_user
-  #    @profile = @user.profile.build
-  #  end
-  #end
-
   def new
     @user = User.find(params[:user_id])
     @profile = @user.profile.build
@@ -42,13 +35,25 @@ class ProfilesController < ApplicationController
 
   #def update
   #  @profile = Profile.find(params[:id])
+  #  @user = current_user
 
-  #  if @profile.update_attributes(profile_params)
-  #    redirect_to user_path(@user)
+  #  if @user.update_attributes(profile_params)
+  #    redirect_to @user.profile, :notice => "Profile updated!"
   #  else
   #    render 'edit'
   #  end
   #end
+
+  def update
+    @user = User.find(params[:user_id])
+
+    if @user.profile(params[:id]).update(profile_params)
+      redirect_to user_profile_path, :notice => "Profile updated!"
+    #  redirect_to product_path, :notice => "Profile updated!"
+    else
+      render 'edit'  #or :edit
+    end
+  end
 
   def destroy
   end

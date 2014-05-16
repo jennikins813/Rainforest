@@ -1,5 +1,5 @@
 <!--= form_for(@user) do |f|%> -->
-<%= form_for([@user,@profile], :url => user_profile_path) do |f|%>
+<%= form_for(@user) do |f|%>
 
 	<div class="field">
 		<%= f.label :name %><br>
@@ -28,3 +28,4 @@
 
 
 <b><%= link_to "Back", products_path %></b> |
+
