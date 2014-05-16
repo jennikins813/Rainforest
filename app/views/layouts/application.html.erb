@@ -7,8 +7,21 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-	<b><%= link_to "Log in", new_session_path %></b> | 
-	<b><%= link_to "Sign up", new_user_path %></b>	|
+
+	<% if current_user %>
+		<b><%= link_to "Edit User", edit_user_path(current_user.id) %></b> |
+		<b><%= link_to "Log out", session_path("current"), :method => :delete %></b>
+	<% else %>
+		<b><%= link_to "Log in", new_session_path %></b> | 
+		<b><%= link_to "Sign up", new_user_path %></b>	|
+	<% end %>	
+
+	<p class="userinfo">
+		<% if current_user %>
+			<!-- <h3>Signed in as <%= link_to current_user.name, user_path(current_user.id) %></h3> -->
+			<h3>Signed in as <%= link_to current_user.name, user_path(current_user.id) %></h3> 	
+		<% end %>
+	</p>		
 
 	
 		<div class="nav">
@@ -24,16 +37,7 @@
 
 		<%= yield %>
 
-			<p class="userinfo">
-				<% if current_user %>
-					Signed in as <b><%= link_to current_user.name, user_path(current_user.id) %></b> <br /> 
-					
-					
-					<b><%= link_to "Edit User", edit_user_path(current_user.id) %></b> |
-					<%= link_to "Log out", session_path("current"), :method => :delete %>
-				
-				<% end %>
-			</p>		
+			
 
 	</body>
 </html>

@@ -1,26 +1,25 @@
 <h1>Welcome to the Rails Rainforest</h1>
 
-<p>Please click on below link to enter the Rainforest</p>
-
-<b><%= link_to "Products Main Page", products_path %></b>
-
-<p>Or please <b><%= link_to "Log in", new_session_path %></b> or <b><%= link_to "Sign up", new_user_path %></b> to continue</p>
+<h3><%= link_to "Products Main Page", products_path %></h3>
 
 
-<% form_tag(:action => 'contact_me') %>
+
+
+<!--
+< form_tag(:action => 'contact_me') %>
 <table>
 <tr>
-  <td><%= label_tag(:name) %></td>
-  <td><%= text_field_tag(:name) %></td>
+  <td><= label_tag(:name) %></td>
+  <td><= text_field_tag(:name) %></td>
 </tr>
 <tr>
-  <td><%= label_tag(:cell) %></td>
-  <td><%= text_field_tag(:cell) %></td>
+  <td><= label_tag(:cell) %></td>
+  <td><= text_field_tag(:cell) %></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
-  <td><%= submit_tag("Send Info") %></td>
+  <td><= submit_tag("Send Info") %></td>
 </tr>
 </table>
-
+-->
 
