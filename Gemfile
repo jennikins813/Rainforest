@@ -44,6 +44,10 @@ group :development do
 	gem 'binding_of_caller'
 end
 
+gem 'carrierwave'
+
+gem 'bootstrap-sass'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
